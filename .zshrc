@@ -110,3 +110,15 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="/Users/paulsfds/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$PATH:/usr/local/sphinx/bin/"
+
+# per directory zsh config
+function chpwd() {
+  if [ -r $PWD/.zsh_config ]; then
+    source $HOME/.zshrc
+    source $PWD/.zsh_config
+  else
+    source $HOME/.zshrc
+  fi
+}
